@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="401dp"
+        android:layout_height="222dp"
+        app:srcCompat="@mipmap/ic_launcher_foreground"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="97dp" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="137dp"
+        tools:layout_editor_absoluteY="462dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="126dp"
+        android:layout_height="57dp"
+        android:text="Login"
+        tools:layout_editor_absoluteX="142dp"
+        tools:layout_editor_absoluteY="557dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="121dp"
+        android:layout_height="41dp"
+        android:text="Password"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="14dp"
+        tools:layout_editor_absoluteY="466dp" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="137dp"
+        tools:layout_editor_absoluteY="408dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="119dp"
+        android:layout_height="39dp"
+        android:layout_marginEnd="4dp"
+        android:text="Student ID"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName"
+        tools:layout_editor_absoluteY="414dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Student Login"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="112dp"
+        tools:layout_editor_absoluteY="330dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
