@@ -1,3 +1,34 @@
 <resources>
     <string name="app_name">Event Tracker</string>
+    <string name="event_title">Event Title<font color='#FF0000'>*</font></string>
+    <string name="select_department">Select Department<font color='#FF0000'>*</font></string>
+    <string name="select_department_desc">Select Department<font color='#FF0000'>*</font></string>
+    <string name="event_description">Event Description<font color='#FF0000'>*</font></string>
+    <string name="email">Email<font color='#FF0000'>*</font></string>
+    <string name="contact_number">Contact Number<font color='#FF0000'>*</font></string>
+    <string name="event_department">Event Department<font color='#FF0000'>*</font></string>
+    <string name="event_date_and_time">Event Date and Time<font color='#FF0000'>*</font></string>
+
+    <string-array name="dept_array">
+        <item>Student Affairs</item>
+        <item>College of Liberal Arts</item>
+        <item>College of Business</item>
+        <item>School of Social Work</item>
+        <item>Transition Programs and Services</item>
+        <item>UTA Libraries</item>
+        <item>Academic Resource Center</item>
+        <item>Alumni Relations</item>
+        <item>Athletics</item>
+        <item>Business Affairs Training and Development</item>
+        <item>College of Architecture, Planning and Public Affairs</item>
+        <item>College of education</item>
+        <item>College of Engineering</item>
+        <item>College of Nursing and Health Innovation</item>
+        <item>Office of Diversity, Equity and Inclusion</item>
+        <item>Division of Student Success</item>
+        <item>Education Opportunity Center</item>
+        <item>Financial Aid and Scholarship</item>
+        <item>Student Accounts</item>
+        <item>Women\'s Faculty and Staff Network</item>
+    </string-array>
 </resources>
