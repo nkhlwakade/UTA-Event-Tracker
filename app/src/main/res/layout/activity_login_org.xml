@@ -1,69 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/org_login_scroll"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="401dp"
-        android:layout_height="222dp"
-        tools:layout_editor_absoluteX="5dp"
-        tools:layout_editor_absoluteY="97dp" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/editTextTextPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword"
-        tools:layout_editor_absoluteX="137dp"
-        tools:layout_editor_absoluteY="462dp" />
+        <ImageView
+            android:id="@+id/org_login_banner_img"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:paddingEnd="50dp"
+            android:paddingStart="50dp"
+            android:paddingTop="16dp"
+            android:src="@drawable/new_initials_logo"/>
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="126dp"
-        android:layout_height="57dp"
-        android:text="Login"
-        tools:layout_editor_absoluteX="142dp"
-        tools:layout_editor_absoluteY="557dp" />
+        <TextView
+            android:id="@+id/org_login_banner_txt"
+            android:layout_width="match_parent"
+            android:layout_height="104dp"
+            android:gravity="center"
+            android:text="Event Organizer Login"
+            android:textAlignment="center"
+            android:textColor="#0064B1"
+            android:textSize="28sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="121dp"
-        android:layout_height="41dp"
-        android:text="Password"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="14dp"
-        tools:layout_editor_absoluteY="466dp" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/organizer_email_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            app:boxBackgroundColor="#FFFFFF">
 
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="135dp"
-        tools:layout_editor_absoluteY="405dp" />
+            <EditText
+                android:id="@+id/organizer_email"
+                android:layout_width="match_parent"
+                android:layout_height="83dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Event Organizer Email"
+                android:inputType="textEmailAddress" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="105dp"
-        android:layout_height="43dp"
-        android:layout_marginEnd="16dp"
-        android:text="Org ID"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName"
-        tools:layout_editor_absoluteY="419dp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Organizer Login"
-        android:textSize="30sp"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="331dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/organizer_pwd_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            app:boxBackgroundColor="#FFFFFF">
+
+            <EditText
+                android:id="@+id/organizer_password"
+                android:layout_width="match_parent"
+                android:layout_height="83dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Password"
+                android:inputType="textPassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/organizer_login_button"
+            android:layout_width="126dp"
+            android:layout_height="57dp"
+            android:text="Login"
+            android:layout_marginTop="48dp"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+</ScrollView>

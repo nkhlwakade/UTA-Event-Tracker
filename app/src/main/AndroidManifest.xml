@@ -11,16 +11,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EventTracker"
         tools:targetApi="31">
-<!--        <activity-->
-<!--            android:name=".MainActivity"-->
-<!--            android:exported="true">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
-
         <activity
             android:name=".AddEvent"
             android:windowSoftInputMode="adjustResize">
@@ -29,8 +19,19 @@
             android:name=".OrganizerEventOptions">
         </activity>
         <activity
+            android:name=".OrganizerDashboard">
+        </activity>
+        <activity
+            android:name=".StudentLogin"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+        <activity
+            android:name=".OrganizerLogin"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+        <activity
             android:exported="true"
-            android:name=".OrganizerDashboard" >
+            android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
