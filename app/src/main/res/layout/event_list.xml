@@ -7,7 +7,7 @@
     tools:context=".OrgEventList">
 
     <TextView
-        android:id="@+id/add_event_heading"
+        android:id="@+id/event_listing_heading"
         android:layout_width="match_parent"
         android:layout_height="104dp"
         android:gravity="center"

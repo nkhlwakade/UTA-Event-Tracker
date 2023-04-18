@@ -29,7 +29,7 @@ import java.util.Map;
 
 public class EventDetails extends AppCompatActivity {
     FirebaseUser stdUser;
-    String eventName, eventAdmin;
+    String eventName, eventAdmin, eventDeptName;
     private DatabaseReference mDatabase;
     JSONObject eventObj;
     TextView eventTitle, eventDesc, eventDept, eventDate, eventTime, eventPhn, eventEmail;
@@ -79,6 +79,7 @@ public class EventDetails extends AppCompatActivity {
                         eventTime.setText(eventObj.get("time").toString());
                         eventDate.setText(eventObj.get("date").toString());
                         eventDept.setText(eventObj.get("dept").toString());
+                        eventDeptName = eventObj.get("dept").toString();
 
                         storageReference = FirebaseStorage.getInstance().getReference("event_images/" + eventObj.get("image_name").toString());
                         Glide.with(EventDetails.this)
@@ -100,7 +101,7 @@ public class EventDetails extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent orgInfo = new Intent(EventDetails.this, AboutOrgOptions.class);
-                orgInfo.putExtra("eventName",eventName);
+                orgInfo.putExtra("deptName", eventDeptName);
                 orgInfo.putExtra("eventAdmin",eventAdmin);
                 orgInfo.putExtra("stdUser",stdUser);
                 startActivity(orgInfo);

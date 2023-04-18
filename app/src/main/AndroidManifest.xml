@@ -50,6 +50,10 @@
             android:windowSoftInputMode="adjustResize">
         </activity>
         <activity
+            android:name=".OrgPage"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+        <activity
             android:exported="true"
             android:name=".MainActivity" >
             <intent-filter>

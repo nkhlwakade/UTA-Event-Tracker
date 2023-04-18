@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -34,6 +35,8 @@ public class OrgEventList extends AppCompatActivity implements AdapterView.OnIte
     FirebaseUser orgUser;
     String user;
 
+    TextView eventListingHeading;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,8 +56,14 @@ public class OrgEventList extends AppCompatActivity implements AdapterView.OnIte
                 Log.d("Organizer Event Opt Extras", ""+orgUser.getEmail());
             }
 
+            if (extras.containsKey("orgInfoPage")){
+                user = "orgInfoPage";
+                Log.d("Organizer Event Opt Extras", ""+user);
+            }
+
         }
 
+        eventListingHeading = (TextView) findViewById(R.id.event_listing_heading);
         mDatabase = FirebaseDatabase.getInstance().getReference("Events");
         ListView listView = findViewById(R.id.custom_list_view);
 
@@ -72,7 +81,8 @@ public class OrgEventList extends AppCompatActivity implements AdapterView.OnIte
                 while(adminList.hasNext()){
                     String adminName = adminList.next();
                     Log.d("OrgEventList", "event admins: " + adminName);
-                    if(user.equals("organizer") && adminName.equals(orgUser.getEmail().split("@")[0])){
+                    if((user.equals("organizer") && adminName.equals(orgUser.getEmail().split("@")[0])) ||
+                        (user.equals("orgInfoPage") && adminName.equals(extras.get("eventAdmin")))){
                         try {
                             Iterator<String> eventNames = ((JSONObject)response.get(adminName)).keys();
                             while(eventNames.hasNext()){
@@ -106,6 +116,10 @@ public class OrgEventList extends AppCompatActivity implements AdapterView.OnIte
             }
         });
         listView.setOnItemClickListener(this);
+
+        if (user.equals("orgInfoPage")){
+            eventListingHeading.setText(extras.get("deptName").toString()+": Event List");
+        }
     }
 
 
