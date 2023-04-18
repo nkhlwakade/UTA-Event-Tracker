@@ -43,8 +43,8 @@ public class StudentLogin extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("Student Login", "signInWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            loginSuccess(user);
+                            FirebaseUser stdUser = mAuth.getCurrentUser();
+                            loginSuccess(stdUser);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w("Student Login", "signInWithEmail:failure", task.getException());
@@ -56,12 +56,12 @@ public class StudentLogin extends AppCompatActivity {
         });
     }
 
-    private void loginSuccess(FirebaseUser user) {
-        Toast.makeText(StudentLogin.this, user.toString(), Toast.LENGTH_LONG).show();
-        Log.d("Student Details", ""+user.getEmail());
+    private void loginSuccess(FirebaseUser stdUser) {
+        Toast.makeText(StudentLogin.this, stdUser.toString(), Toast.LENGTH_LONG).show();
+        Log.d("Student Details", ""+stdUser.getEmail());
 
-//        Intent i = new Intent(StudentLogin.this, NewActivity.class);
-//        i.putExtra("key",value);
-//        startActivity(i);
+        Intent i = new Intent(StudentLogin.this, StudentDashboard.class);
+        i.putExtra("stdUser",stdUser);
+        startActivity(i);
     }
 }

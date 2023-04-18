@@ -1,11 +1,18 @@
 package com.example.eventtracker;
 
 public class Event {
-    String title, desc, date, time, dept, phn, email;
+    String title;
+    String desc;
+    String date;
+    String time;
+    String dept;
+    String phn;
+    String email;
+    String image_name;
 
     public Event() {}
 
-    public Event(String title, String desc, String date, String time, String dept, String phn, String email){
+    public Event(String title, String desc, String date, String time, String dept, String phn, String email, String image_name){
         this.title = title;
         this.desc = desc;
         this.date = date;
@@ -13,6 +20,7 @@ public class Event {
         this.dept = dept;
         this.phn = phn;
         this.email = email;
+        this.image_name = image_name;
     }
 
     public String getTitle() {
@@ -69,5 +77,13 @@ public class Event {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getImage_name() {
+        return image_name;
+    }
+
+    public void setImage_name(String image_name) {
+        this.image_name = image_name;
     }
 }

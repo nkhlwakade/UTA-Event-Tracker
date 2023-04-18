@@ -22,6 +22,7 @@ public class OrganizerEventOptions extends AppCompatActivity {
         setContentView(R.layout.organizer_event_options);
 
         addEvent = (CardView) findViewById(R.id.add_event_card);
+        updateEvent = (CardView) findViewById(R.id.update_event_option);
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -32,9 +33,18 @@ public class OrganizerEventOptions extends AppCompatActivity {
         addEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), AddEvent.class);
-                i.putExtra("orgUser",orgUser);
-                startActivity(i);
+                Intent addEvent = new Intent(getApplicationContext(), AddEvent.class);
+                addEvent.putExtra("orgUser",orgUser);
+                startActivity(addEvent);
+            }
+        });
+
+        updateEvent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent updateEvent = new Intent(getApplicationContext(), OrgEventList.class);
+                updateEvent.putExtra("orgUser",orgUser);
+                startActivity(updateEvent);
             }
         });
     }

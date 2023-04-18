@@ -26,7 +26,27 @@
             android:windowSoftInputMode="adjustResize">
         </activity>
         <activity
+            android:name=".OrgEventList"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+        <activity
+            android:name=".UpdateEvent"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+        <activity
             android:name=".OrganizerLogin"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+        <activity
+            android:name=".StudentDashboard"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+        <activity
+            android:name=".EventDetails"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+        <activity
+            android:name=".AboutOrgOptions"
             android:windowSoftInputMode="adjustResize">
         </activity>
         <activity
