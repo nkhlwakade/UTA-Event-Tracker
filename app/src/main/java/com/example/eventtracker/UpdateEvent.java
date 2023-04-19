@@ -173,7 +173,8 @@ public class UpdateEvent extends AppCompatActivity implements View.OnClickListen
                             event_dept,
                             eventPhn.getText().toString(),
                             eventEmail.getText().toString(),
-                            image_name);
+                            image_name,
+                            eventAdmin);
 
                     mDatabase = FirebaseDatabase.getInstance().getReference();
                     storageReference = FirebaseStorage.getInstance().getReference("event_images/" + image_name);

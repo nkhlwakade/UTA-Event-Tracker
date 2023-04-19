@@ -44,6 +44,7 @@
                     android:id="@+id/update_event_img"
                     android:paddingLeft="16dp"
                     android:paddingRight="16dp"
+                    android:scaleType="center"
                     android:layout_width="match_parent"
                     android:layout_height="160dp"/>
 

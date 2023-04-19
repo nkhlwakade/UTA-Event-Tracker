@@ -9,10 +9,11 @@ public class Event {
     String phn;
     String email;
     String image_name;
+    String adminName;
 
     public Event() {}
 
-    public Event(String title, String desc, String date, String time, String dept, String phn, String email, String image_name){
+    public Event(String title, String desc, String date, String time, String dept, String phn, String email, String image_name, String adminName){
         this.title = title;
         this.desc = desc;
         this.date = date;
@@ -21,6 +22,7 @@ public class Event {
         this.phn = phn;
         this.email = email;
         this.image_name = image_name;
+        this.adminName = adminName;
     }
 
     public String getTitle() {
@@ -29,6 +31,14 @@ public class Event {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getAdminName() {
+        return adminName;
+    }
+
+    public void setAdminName(String adminName) {
+        this.adminName = adminName;
     }
 
     public String getDesc() {

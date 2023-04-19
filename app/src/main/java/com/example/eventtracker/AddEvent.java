@@ -142,7 +142,8 @@ public class AddEvent extends AppCompatActivity implements View.OnClickListener 
                             event_dept,
                             eventPhn.getText().toString(),
                             eventEmail.getText().toString(),
-                            image_name);
+                            image_name,
+                            orgUser.getEmail().split("@")[0].toString());
 
                     myRef = database.getReference("Events");
                     storageReference = FirebaseStorage.getInstance().getReference("event_images/"+image_name);

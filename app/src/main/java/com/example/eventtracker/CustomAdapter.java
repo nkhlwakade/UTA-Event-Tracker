@@ -13,9 +13,9 @@ import java.util.ArrayList;
 public class CustomAdapter extends BaseAdapter {
 
     private final Context context;
-    private final ArrayList<EventList> eventLists;
+    private final ArrayList<Event> eventLists;
 
-    public CustomAdapter(Context context, ArrayList<EventList> eventLists) {
+    public CustomAdapter(Context context, ArrayList<Event> eventLists) {
         this.context = context;
         this.eventLists = eventLists;
     }
@@ -51,10 +51,10 @@ public class CustomAdapter extends BaseAdapter {
             holderView = (HolderView) convertView.getTag();
         }
 
-        EventList list = eventLists.get(position);
+        Event list = eventLists.get(position);
 //        holderView.iconList.setImageResource(list.getSocialMediaIcon());
-        holderView.eventTitle.setText(list.getEventTitle());
-        holderView.eventTDesc.setText(list.getEventDesc());
+        holderView.eventTitle.setText(list.getTitle());
+        holderView.eventTDesc.setText(list.getDesc());
 
         return convertView;
     }

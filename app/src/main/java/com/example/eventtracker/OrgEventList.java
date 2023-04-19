@@ -29,7 +29,7 @@ import java.util.Map;
 
 public class OrgEventList extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
-    private ArrayList<EventList> eList;
+    private ArrayList<Event> eList;
     private DatabaseReference mDatabase;
 
     FirebaseUser orgUser;
@@ -86,9 +86,15 @@ public class OrgEventList extends AppCompatActivity implements AdapterView.OnIte
                         try {
                             Iterator<String> eventNames = ((JSONObject)response.get(adminName)).keys();
                             while(eventNames.hasNext()){
-                                String eventName = eventNames.next();
-                                String eventDesc = (String) ((JSONObject)((JSONObject)response.get(adminName)).get(eventName)).get("desc");
-                                eList.add(new EventList(eventName, eventDesc, adminName));
+                                String eventTitle = eventNames.next();
+                                String eventDesc = (String) ((JSONObject)((JSONObject)response.get(adminName)).get(eventTitle)).get("desc");
+                                String eventDate = (String) ((JSONObject)((JSONObject)response.get(adminName)).get(eventTitle)).get("date");
+                                String eventTime = (String) ((JSONObject)((JSONObject)response.get(adminName)).get(eventTitle)).get("time");
+                                String eventDept = (String) ((JSONObject)((JSONObject)response.get(adminName)).get(eventTitle)).get("dept");
+                                String eventPhn = (String) ((JSONObject)((JSONObject)response.get(adminName)).get(eventTitle)).get("phn");
+                                String eventEmail = (String) ((JSONObject)((JSONObject)response.get(adminName)).get(eventTitle)).get("email");
+                                String eventImg = (String) ((JSONObject)((JSONObject)response.get(adminName)).get(eventTitle)).get("image_name");
+                                eList.add(new Event(eventTitle, eventDesc, eventDate, eventTime, eventDept, eventPhn, eventEmail, eventImg, adminName));
                             }
                         } catch (JSONException e) {
                             throw new RuntimeException(e);
@@ -97,9 +103,15 @@ public class OrgEventList extends AppCompatActivity implements AdapterView.OnIte
                         try {
                             Iterator<String> eventNames = ((JSONObject)response.get(adminName)).keys();
                             while(eventNames.hasNext()){
-                                String eventName = eventNames.next();
-                                String eventDesc = (String) ((JSONObject)((JSONObject)response.get(adminName)).get(eventName)).get("desc");
-                                eList.add(new EventList(eventName, eventDesc, adminName));
+                                String eventTitle = eventNames.next();
+                                String eventDesc = (String) ((JSONObject)((JSONObject)response.get(adminName)).get(eventTitle)).get("desc");
+                                String eventDate = (String) ((JSONObject)((JSONObject)response.get(adminName)).get(eventTitle)).get("date");
+                                String eventTime = (String) ((JSONObject)((JSONObject)response.get(adminName)).get(eventTitle)).get("time");
+                                String eventDept = (String) ((JSONObject)((JSONObject)response.get(adminName)).get(eventTitle)).get("dept");
+                                String eventPhn = (String) ((JSONObject)((JSONObject)response.get(adminName)).get(eventTitle)).get("phn");
+                                String eventEmail = (String) ((JSONObject)((JSONObject)response.get(adminName)).get(eventTitle)).get("email");
+                                String eventImg = (String) ((JSONObject)((JSONObject)response.get(adminName)).get(eventTitle)).get("image_name");
+                                eList.add(new Event(eventTitle, eventDesc, eventDate, eventTime, eventDept, eventPhn, eventEmail, eventImg, adminName));
                             }
                         } catch (JSONException e) {
                             throw new RuntimeException(e);
@@ -125,17 +137,17 @@ public class OrgEventList extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-        EventList event = eList.get(position);
+        Event event = eList.get(position);
         if (user.equals("organizer")){
             Intent updateEvent = new Intent(OrgEventList.this, UpdateEvent.class);
-            updateEvent.putExtra("eventName",event.getEventTitle());
+            updateEvent.putExtra("eventName",event.getTitle());
             updateEvent.putExtra("eventAdmin",event.getAdminName());
             startActivity(updateEvent);
         }
 
         if(user.equals("student")){
             Intent eventDetails = new Intent(OrgEventList.this, EventDetails.class);
-            eventDetails.putExtra("eventName",event.getEventTitle());
+            eventDetails.putExtra("eventName",event.getTitle());
             eventDetails.putExtra("eventAdmin",event.getAdminName());
             eventDetails.putExtra("stdUser",orgUser);
             startActivity(eventDetails);
